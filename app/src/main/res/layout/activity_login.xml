@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/loginlayoutScreen"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="80dp"
+            >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logofinal" />
+
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/lay_texts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="Welcome"
+                        android:textColor="#000"
+                        android:textSize="25sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text=" "
+                        android:textColor="#000"
+                        android:textSize="5sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="sign to continue"
+                        android:textColor="#B4B4B4"
+                        android:textSize="25sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay_texts"
+                    android:layout_marginTop="15dp">
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/mailRegister"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:backgroundTint="#D9D9D9"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:gravity="start|bottom"
+                        android:hint="Mobile Number"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        tools:ignore="RtlSymmetry" />
+
+                    <com.chaos.view.PinView
+                        android:id="@+id/pinViewOTPreRe"
+                        style="@style/PinWidget.PinView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/mailRegister"
+
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="70dp"
+                        android:cursorVisible="true"
+                        android:inputType="number"
+                        android:itemBackground="#fff"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:cursorWidth="2dp"
+                        app:itemCount="6"
+                        app:itemHeight="37dp"
+                        app:itemRadius="4dp"
+                        app:itemSpacing="7dp"
+                        app:itemWidth="37dp"
+                        app:lineColor="@color/colorPrimary"
+                        app:lineWidth="1dp"
+                        app:viewType="rectangle" />
+
+                    <TextView
+                        android:id="@+id/otpText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/pinViewOTPreRe"
+                        android:layout_alignStart="@+id/pinViewOTPreRe"
+                        android:layout_alignEnd="@+id/pinViewOTPreRe"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:visibility="gone"
+                        android:layout_marginBottom="0dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="Enter OTP" />
+
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/signUp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/rel_edit"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/login_btn"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="login"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/ContinueOTP"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/rel_edit"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/login_btn"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Continue"
+                    android:visibility="gone"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+                <RelativeLayout
+                    android:id="@+id/rel_or"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/signUp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginEnd="15dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_toStartOf="@+id/txt_or"
+                        android:background="#BBBBBB" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_or"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="or"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_toEndOf="@+id/txt_or"
+                        android:background="#BBBBBB" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/lltext1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/signUp"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="15dp"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:maxLines="1"
+                        android:layout_marginTop="30dp"
+                        android:text="Not a User "
+                        android:textColor="#9E9E9E"
+                        android:textSize="17sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/create"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:maxLines="1"
+                        android:text="Sign Up?"
+                        android:textColor="#DE6E65"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
