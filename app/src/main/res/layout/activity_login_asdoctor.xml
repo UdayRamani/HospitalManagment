@@ -66,7 +66,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/quicksand_bold"
-                        android:text="sign to continue as a patient"
+                        android:text="sign to continue as a doctor"
                         android:textColor="#B4B4B4"
                         android:textSize="60px" />
 
