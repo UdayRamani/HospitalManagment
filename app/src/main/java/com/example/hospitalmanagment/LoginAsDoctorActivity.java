@@ -1,15 +1,8 @@
 package com.example.hospitalmanagment;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatEditText;
-import androidx.appcompat.widget.AppCompatTextView;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -17,6 +10,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatTextView;
+
 import com.chaos.view.PinView;
 import com.example.hospitalmanagment.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,7 +29,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -38,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginAsDoctorActivity extends AppCompatActivity {
 
     AppCompatEditText email;
     AppCompatButton signInBtn,ContinueOTP;
@@ -57,30 +56,30 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        email = findViewById(R.id.mailRegister);
-        pinViewOTPreRe = findViewById(R.id.pinViewOTPreRe);
-        signInBtn = findViewById(R.id.signUp);
-        SignUp = findViewById(R.id.lltext1);
+        setContentView(R.layout.activity_login_asdoctor);
+        email = findViewById(R.id.mailRegisterdoctor);
+        pinViewOTPreRe = findViewById(R.id.pinViewOTPreRedoctor);
+        signInBtn = findViewById(R.id.signUpdoctor);
+        SignUp = findViewById(R.id.lltext1doctor);
         auth = FirebaseAuth.getInstance();
-        ContinueOTP=findViewById(R.id.ContinueOTP);
-        loginasdoctor=findViewById(R.id.loginasdoctor);
+        ContinueOTP=findViewById(R.id.ContinueOTPdoctor);
+        loginasdoctor=findViewById(R.id.loginasdoctordoctor);
         loginasdoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(LoginActivity.this,LoginAsDoctorActivity.class);
+                Intent intent=new Intent(LoginAsDoctorActivity.this,LoginActivity.class);
                 startActivity(intent);
             }
         });
         mProgressDialog = new ProgressDialog(getApplicationContext());
         db=FirebaseFirestore.getInstance();
 
-        otpText = findViewById(R.id.otpText);
+        otpText = findViewById(R.id.otpTextdoctor);
 
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                Intent intent = new Intent(LoginAsDoctorActivity.this, RegistrationActivity.class);
                 startActivity(intent);
             }
         });
@@ -119,16 +118,16 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithCredential:success");
                             FirebaseUser user = task.getResult().getUser();
-                            Toast.makeText(LoginActivity.this, "Successfully"+""+user, Toast.LENGTH_SHORT).show();
-                            Intent intent=new Intent(LoginActivity.this,Dashboard.class);
-                            StorageMangment.getInstance(getApplicationContext()).getLoginInformation("loginPatient");
+                            Toast.makeText(LoginAsDoctorActivity.this, "Successfully"+""+user, Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(LoginAsDoctorActivity.this,Dashboard.class);
+                            StorageMangment.getInstance(getApplicationContext()).getLoginInformation("loginDoctor");
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             // ...
                         } else {
                             // Sign in failed, display a message and update the UI
-                            Toast.makeText(LoginActivity.this, "Code Wrong", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginAsDoctorActivity.this, "Code Wrong", Toast.LENGTH_SHORT).show();
                             Log.w("TAG", "signInWithCredential:failure", task.getException());
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
@@ -171,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
                                         PhoneAuthOptions.newBuilder(auth)
                                                 .setPhoneNumber(phoneNo)       // Phone number to verify
                                                 .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                                                .setActivity(LoginActivity.this)                 // Activity (for callback binding)
+                                                .setActivity(LoginAsDoctorActivity.this)                 // Activity (for callback binding)
                                                 .setCallbacks(mCallBack)          // OnVerificationStateChangedCallbacks
                                                 .build();
                                 PhoneAuthProvider.verifyPhoneNumber(options);
@@ -204,7 +203,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
             Log.d(e.getMessage().toString(), "onVerificationFailed: ");
-            Toast.makeText(LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginAsDoctorActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/loginlayoutScreen"
+    android:id="@+id/loginlayoutScreendoctor"
     android:orientation="vertical">
 
 
@@ -32,7 +32,7 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/lay_texts"
+                    android:id="@+id/lay_textsdoctor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -73,15 +73,15 @@
                 </LinearLayout>
 
                 <RelativeLayout
-                    android:id="@+id/rel_edit"
+                    android:id="@+id/rel_editdoctor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/lay_texts"
+                    android:layout_below="@+id/lay_textsdoctor"
                     android:layout_marginTop="15dp">
 
 
                     <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/mailRegister"
+                        android:id="@+id/mailRegisterdoctor"
                         android:layout_width="fill_parent"
                         android:layout_height="40sp"
                         android:layout_marginStart="15dp"
@@ -98,11 +98,11 @@
                         tools:ignore="RtlSymmetry" />
 
                     <com.chaos.view.PinView
-                        android:id="@+id/pinViewOTPreRe"
+                        android:id="@+id/pinViewOTPreRedoctor"
                         style="@style/PinWidget.PinView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/mailRegister"
+                        android:layout_below="@+id/mailRegisterdoctor"
 
                         android:layout_marginStart="70dp"
                         android:layout_marginTop="20dp"
@@ -125,12 +125,12 @@
                         app:viewType="rectangle" />
 
                     <TextView
-                        android:id="@+id/otpText"
+                        android:id="@+id/otpTextdoctor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_above="@+id/pinViewOTPreRe"
-                        android:layout_alignStart="@+id/pinViewOTPreRe"
-                        android:layout_alignEnd="@+id/pinViewOTPreRe"
+                        android:layout_above="@+id/pinViewOTPreRedoctor"
+                        android:layout_alignStart="@+id/pinViewOTPreRedoctor"
+                        android:layout_alignEnd="@+id/pinViewOTPreRedoctor"
                         android:layout_marginStart="0dp"
                         android:layout_marginEnd="0dp"
                         android:visibility="gone"
@@ -143,10 +143,10 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/signUp"
+                    android:id="@+id/signUpdoctor"
                     android:layout_width="fill_parent"
                     android:layout_height="60dp"
-                    android:layout_below="@+id/rel_edit"
+                    android:layout_below="@+id/rel_editdoctor"
                     android:layout_margin="15dp"
                     android:background="@drawable/login_btn"
                     android:fontFamily="@font/quicksand_bold"
@@ -155,10 +155,10 @@
                     android:textColor="#fff"
                     android:textSize="20sp" />
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/ContinueOTP"
+                    android:id="@+id/ContinueOTPdoctor"
                     android:layout_width="fill_parent"
                     android:layout_height="60dp"
-                    android:layout_below="@+id/rel_edit"
+                    android:layout_below="@+id/rel_editdoctor"
                     android:layout_margin="15dp"
                     android:background="@drawable/login_btn"
                     android:fontFamily="@font/quicksand_bold"
@@ -168,10 +168,10 @@
                     android:textColor="#fff"
                     android:textSize="20sp" />
                 <RelativeLayout
-                    android:id="@+id/rel_or"
+                    android:id="@+id/rel_ordoctor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/signUp"
+                    android:layout_below="@+id/signUpdoctor"
                     android:layout_marginStart="15dp"
                     android:layout_marginBottom="30dp"
                     android:layout_marginEnd="15dp">
@@ -180,11 +180,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="13dp"
-                        android:layout_toStartOf="@+id/txt_or"
+                        android:layout_toStartOf="@+id/txt_ordoctor"
                         android:background="#BBBBBB" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_or"
+                        android:id="@+id/txt_ordoctor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -198,38 +198,38 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="13dp"
-                        android:layout_toEndOf="@+id/txt_or"
+                        android:layout_toEndOf="@+id/txt_ordoctor"
                         android:background="#BBBBBB" />
                 </RelativeLayout>
 
 
                 <LinearLayout
-                    android:id="@+id/lltext3"
+                    android:id="@+id/lltext3doctor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/signUp"
+                    android:layout_below="@+id/signUpdoctor"
                     android:layout_centerInParent="true"
                     android:gravity="end"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/loginasdoctor"
+                        android:id="@+id/loginasdoctordoctor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/quicksand_bold"
                         android:maxLines="1"
                         android:layout_marginTop="30dp"
-                        android:text="Login Doctor ?  "
+                        android:text="Login Patient ?  "
                         android:textColor="#9E9E9E"
                         android:textSize="17sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/lltext1"
+                    android:id="@+id/lltext1doctor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/lltext3"
+                    android:layout_below="@+id/lltext3doctor"
                     android:layout_centerInParent="true"
 
                     android:gravity="end"
@@ -246,7 +246,7 @@
                         android:textSize="17sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/create"
+                        android:id="@+id/createdoctor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="3dp"

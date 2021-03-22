@@ -4,10 +4,16 @@ public class Patient {
     String PatientName;
     String PatientNumber;
 
-    public Patient(String patientName, String patientNumber) {
-        PatientName = patientName;
-        PatientNumber = patientNumber;
+    public String getPatientGender() {
+        return PatientGender;
     }
+
+    public void setPatientGender(String patientGender) {
+        PatientGender = patientGender;
+    }
+
+    String PatientGender;
+
 
     public String getPatientName() {
         return PatientName;

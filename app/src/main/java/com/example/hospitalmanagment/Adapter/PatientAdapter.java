@@ -27,16 +27,16 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.myViewHo
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.petientcard,parent,false);
-            return new myViewHolder(itemView);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.petientcard, parent, false);
+        return new myViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        Patient patient=patientList.get(position);
-        holder.patientName.setText(patient.getPatientName());
-        holder.patientPhoneNumber.setText(patient.getPatientNumber());
-
+        Patient patient = patientList.get(position);
+        holder.patientNames.setText(patient.getPatientName());
+        holder.patientPhoneNumbers.setText(patient.getPatientNumber());
+        holder.patientGender.setText(patient.getPatientGender());
     }
 
     @Override
@@ -45,14 +45,16 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.myViewHo
     }
 
     public static class myViewHolder extends RecyclerView.ViewHolder {
-        TextView patientName;
-        TextView patientPhoneNumber;
+        TextView patientNames;
+        TextView patientPhoneNumbers;
+        TextView patientGender;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            patientName = (TextView)itemView.findViewById(R.id.patentName);
-            patientPhoneNumber =  (TextView)itemView.findViewById(R.id.phoneNumber);
+            patientNames = (TextView) itemView.findViewById(R.id.HospitalAddress);
+            patientPhoneNumbers = (TextView) itemView.findViewById(R.id.patentPhoneNumber);
+            patientGender = (TextView) itemView.findViewById(R.id.patientGender);
         }
     }
 }

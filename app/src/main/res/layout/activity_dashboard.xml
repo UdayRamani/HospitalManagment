@@ -27,7 +27,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="18dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/img_sidemenu" />
+                     />
             </RelativeLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -81,7 +81,7 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:id="@+id/card_doctor"
+                    android:id="@+id/card_Patient"
                     android:layout_width="110dp"
                     android:layout_height="105dp"
                     android:layout_gravity="center"
@@ -133,7 +133,7 @@
                             android:layout_width="45dp"
                             android:layout_height="45dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/medicine" />
+                            android:background="@drawable/doctorpng" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
@@ -142,7 +142,7 @@
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/quicksand_bold"
                             android:gravity="center"
-                            android:text="pharmany" />
+                            android:text="Doctor" />
                     </LinearLayout>
                 </RelativeLayout>
 
@@ -227,8 +227,11 @@
         android:layout_below="@+id/relative_heder"
         android:background="#F3F2F3">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_doctordlist"
+<!--        <include layout="@layout/activity_appointment_list"/>-->
+
+
+                <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_appointmentList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="2dp"
